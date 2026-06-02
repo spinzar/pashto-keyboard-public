@@ -1,4 +1,3 @@
-
 ---
 
 # 🖥️ پښتو آفلاین کیبورډ | Pashto Offline Keyboard
@@ -32,8 +31,8 @@ A complete **offline** Pashto keyboard that works without internet. Built with E
 دا پروژه لا تر اوسه په رسمي ډول ریلیز شوې نه ده. د چلولو لپاره لومړی پروژه پخپل کمپیوټر کې کلوون (Clone) کړئ:
 
 ```bash
-git clone https://github.com/spinzar/pashto-keyboard-public.git
-cd pashto-keyboard-public
+git clone https://github.com/spinzar/pashto-keyboard-linux.git
+cd pashto-keyboard-linux
 
 ```
 
@@ -102,7 +101,7 @@ npm run dist
 
 * **عادي** – عادي پښتو توري او عددونه
 * **شفټ** – لوی توري (capital)، تشکيل، او ځانګړي نښې
-* **کنټرول الټ** – سمبولونه، بریکٹ، او ځانګړي کرکټرونه
+* **کنټرول الټ** – سمبولونه, بریکٹ, او ځانګړي کرکټرونه
 
 ### 4. کاپي او پیسټ
 
@@ -119,7 +118,7 @@ npm run dist
 ## 🛠️ د پروژې جوړښت | Project Structure
 
 ```
-pashto-keyboard-public/
+pashto-keyboard-linux/
 ├── assets/
 │   └── icons/              # د اپلیکیشن آیکونونه او سکرین شاټونه
 ├── src/
@@ -145,7 +144,7 @@ pashto-keyboard-public/
 4. برانچ ته پش کړئ (`git push origin feature/amazing-feature`)
 5. د پل راکښنې (Pull Request) پرانیزئ
 
-**ستونزې (Issues):** مهرباني وکړئ که تاسو کومه ستونزه ومومئ، د [GitHub Issues](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fspinzar%2Fpashto-keyboard-public%2Fissues) له لارې راپور یې کړئ.
+**ستونزې (Issues):** مهرباني وکړئ که تاسو کومه ستونزه ومومئ، د [GitHub Issues](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fspinzar%2Fpashto-keyboard-linux%2Fissues) له لارې راپور یې کړئ.
 
 ---
 
@@ -173,13 +172,13 @@ pashto-keyboard-public/
 ## 📞 اړیکه | Contact
 
 * **پرمخوړونکی (Developer):** iPashto AI / spinzar
-* **د پروژې لینک (Project Link):** [https://github.com/spinzar/pashto-keyboard-public](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fspinzar%2Fpashto-keyboard-public)
-* **ستونزې (Issues):** [https://github.com/spinzar/pashto-keyboard-public/issues](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fspinzar%2Fpashto-keyboard-public%2Fissues)
+* **د پروژې لینک (Project Link):** [https://github.com/spinzar/pashto-keyboard-linux](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fspinzar%2Fpashto-keyboard-linux)
+* **ستونزې (Issues):** [https://github.com/spinzar/pashto-keyboard-linux/issues](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fspinzar%2Fpashto-keyboard-linux%2Fissues)
 
 ---
 
 ### ❤️ ملاتړ
 
-که دا پروژه تاسو سره مهرباني وکړه، مهرباني وکړئ د **⭐ ستوري (Star)** په ورکولو سره یې ملاتړ وکړئ.
+که دا پروژه تاسو سره مرسته وکړه، مهرباني وکړئ د **⭐ ستوري (Star)** په ورکولو سره یې ملاتړ وکړئ.
 
 **پښتو ژبه وساتئ | Keep Pashto Language Alive** 🎯

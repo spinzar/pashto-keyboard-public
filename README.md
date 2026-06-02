@@ -1,4 +1,3 @@
-
 ```markdown
 # 🖥️ پښتو آفلاین کیبورډ | Pashto Offline Keyboard
 
@@ -20,6 +19,7 @@ A complete **offline** Pashto keyboard that works without internet. Built with E
 - 📋 **کاپي او پیسټ** – د سیسټم کلپ بورډ ملاتړ | Copy/Paste Support
 - 🕒 **د متن تاریخچه** – وروستي ۳ متنونه خوندي کوي (په localStorage کې) | Text History (last 3)
 - 🎯 **د کرسر موقعیت ساتل** – هرځای ته کیلي دننه کول | Cursor Position Preservation
+- 💾 **د کړکۍ موقعیت خوندي کول** – د اپلیکیشن اندازه او ځای یادوي | Remembers Window Position & Size
 - 🎨 **ښکلی او کارن-دوستانه انٹرفیس** – RTL ملاتړ | Clean RTL UI
 - 🔧 **د اوبنټو ۲۴.۰۴ او ورته توزیعونو سره مطابقت** | Ubuntu 24.04+ Compatible
 - ⚡ **د شارټ کټ ملاتړ** – `Alt + Shift + P` سره ښکاره/پټول | Shortcut Support
@@ -30,7 +30,7 @@ A complete **offline** Pashto keyboard that works without internet. Built with E
 
 ![پښتو کیبورډ سکرین شاټ](https://via.placeholder.com/800x500?text=Pashto+Keyboard+UI)
 
-> *یادونه: مهرباني وکړئ د ریښتیني سکرین شاټ سره تصویر بدل کړئ.*
+> **یادونه:** مهرباني وکړئ د ریښتیني سکرین شاټ سره پورته تصویر بدل کړئ.
 
 ---
 
@@ -38,37 +38,33 @@ A complete **offline** Pashto keyboard that works without internet. Built with E
 
 ### لار ۱: د `.deb` پیکج څخه (توصیه شوی)
 
-1. د وروستي ریلیز څخه `.deb` فایل ډاونلوډ کړئ:
-   ```bash
-   wget https://github.com/spinzar/pashto-keyboard-public/releases/download/v1.0.0/pashto-keyboard_1.0.0_amd64.deb
-   ```
-
-2. پیکج نصب کړئ:
-   ```bash
-   sudo dpkg -i pashto-keyboard_1.0.0_amd64.deb
-   ```
-
-3. که کومه تړلې ستونزه وي، حل یې کړئ:
-   ```bash
-   sudo apt-get install -f
-   ```
+1.  د وروستي ریلیز څخه `.deb` فایل ډاونلوډ کړئ:
+    ```bash
+    wget https://github.com/spinzar/pashto-keyboard-public/releases/download/v1.0.0/pashto-keyboard_1.0.0_amd64.deb
+    ```
+2.  پیکج نصب کړئ:
+    ```bash
+    sudo dpkg -i pashto-keyboard_1.0.0_amd64.deb
+    ```
+3.  که کومه تړلې ستونزه وي، حل یې کړئ:
+    ```bash
+    sudo apt-get install -f
+    ```
 
 ### لار ۲: د AppImage څخه (پورټبل)
 
-1. د AppImage فایل ډاونلوډ کړئ:
-   ```bash
-   wget https://github.com/spinzar/pashto-keyboard-public/releases/download/v1.0.0/PashtoKeyboard-1.0.0.AppImage
-   ```
-
-2. د اجرا کولو اجازه ورکړئ:
-   ```bash
-   chmod +x PashtoKeyboard-1.0.0.AppImage
-   ```
-
-3. چلول:
-   ```bash
-   ./PashtoKeyboard-1.0.0.AppImage --no-sandbox
-   ```
+1.  د AppImage فایل ډاونلوډ کړئ:
+    ```bash
+    wget https://github.com/spinzar/pashto-keyboard-public/releases/download/v1.0.0/PashtoKeyboard-1.0.0.AppImage
+    ```
+2.  د اجرا کولو اجازه ورکړئ:
+    ```bash
+    chmod +x PashtoKeyboard-1.0.0.AppImage
+    ```
+3.  چلول:
+    ```bash
+    ./PashtoKeyboard-1.0.0.AppImage --no-sandbox
+    ```
 
 ### لار ۳: د سرچینې څخه جوړول
 
@@ -78,10 +74,27 @@ A complete **offline** Pashto keyboard that works without internet. Built with E
 git clone https://github.com/spinzar/pashto-keyboard-public.git
 cd pashto-keyboard-public
 npm install
-npm run dist:deb
+npm run dist:deb   # د .deb پیکج لپاره
+# یا
+npm run dist:appimage # د AppImage پیکج لپاره
 ```
 
-جوړ شوی `.deb` فایل به د `dist/` فولډر کې وي.
+جوړ شوی پیکج به د `dist/` فولډر کې وي.
+
+### لار ۴: د اتوماتیک سکریپټ څخه کارول (rebuild.sh)
+
+په پروژه کې یو اتوماتیک سکریپټ (`rebuild.sh`) شامل دی چې ټول اړین ګامونه پخپله ترسره کوي او اپلیکیشن پیلوي. دا د چټکې ازموینې لپاره ډیر ګټور دی.
+
+1.  د سکریپټ د اجرا کولو اجازه ورکړئ:
+    ```bash
+    chmod +x rebuild.sh
+    ```
+2.  سکریپټ چل کړئ:
+    ```bash
+    ./rebuild.sh
+    ```
+
+> **یادونه:** دا سکریپټ به `node_modules` او `dist` پاک کړي، ټول انحصارونه نصب کړي، یوازې **AppImage** جوړه کړي او بیا به یې پیل کړي.
 
 ---
 
@@ -91,7 +104,7 @@ npm run dist:deb
 
 - د اپلیکیشن مینو څخه "PashtoKeyboard" لټون وکړئ.
 - یا په ټرمینل کې `pashto-keyboard` ټایپ کړئ.
-- د شارټ کټ لپاره **`Alt + Shift + P** فشار کړئ (اپلیکیشن به ښکاره او پټ شي).
+- د شارټ کټ لپاره **`Alt + Shift + P`** فشار کړئ (اپلیکیشن به ښکاره او پټ شي).
 
 ### 2. متن لیکل
 
@@ -110,9 +123,10 @@ npm run dist:deb
 - د **کاپي** تڼۍ باندې کلیک وکړئ – ټول متن به کلپ بورډ ته لاړ شي.
 - د **پیسټ** تڼۍ باندې کلیک وکړئ – د کلپ بورډ متن به د کرسر په موقعیت کې دننه شي.
 
-### 5. متن پاکول
+### 5. متن پاکول او تاریخچه
 
 - د **پاکول** تڼۍ باندې کلیک وکړئ – ټول متن به له ټکسیال څخه لیرې شي.
+- د **تاریخچه** تڼۍ باندې کلیک وکړئ – وروستي ۳ خوندي شوي متنونه به وګورئ او کولی شئ یې بیرته راوګرځوئ.
 
 ---
 
@@ -129,11 +143,12 @@ npm run dist:deb
 ```
 pashto-keyboard-public/
 ├── assets/
-│   └── icons/              # د اپلیکیشن آیکونونه (16x16 - 512x512)
+│   └── icons/              # د اپلیکیشن آیکونونه
 ├── src/
-│   ├── main.js             # Electron اصلي پروسه
-│   └── index.html          # UI او کیبورډ منطق
+│   ├── main.js             # Electron اصلي پروسه (د کړکۍ موقعیت یاد ساتي)
+│   └── index.html          # UI او کیبورډ منطق (د تاریخچې سره)
 ├── dist/                   # جوړ شوي پیکجونه (deb, AppImage)
+├── rebuild.sh              # اتوماتیک جوړونې سکریپټ
 ├── package.json            # پروژه ترتیبات او انحصارونه
 ├── LICENSE                 # Apache 2.0 لایسنس
 └── README.md               # دا فایل
@@ -145,11 +160,14 @@ pashto-keyboard-public/
 # د پراختیا په حالت کې چلول
 npm start
 
-# د .deb پیکج جوړول
+# یوازې د .deb پیکج جوړول
 npm run dist:deb
 
-# د AppImage پیکج جوړول
+# یوازې د AppImage پیکج جوړول
 npm run dist:appimage
+
+# دواړه (deb او AppImage) جوړول
+npm run dist
 ```
 
 ---
@@ -158,13 +176,13 @@ npm run dist:appimage
 
 ستاسو مرستې ته ښه راغلاست ویل کیږي! که تاسو غواړئ په دې پروژه کې مرسته وکړئ:
 
-1. فورک (Fork) کړئ
-2. د ځانګړتیاوو لپاره نوی برانچ (branch) جوړ کړئ (`git checkout -b feature/amazing-feature`)
-3. بدلونونه کامېټ کړئ (`git commit -m 'Add some amazing feature'`)
-4. برانچ ته پش کړئ (`git push origin feature/amazing-feature`)
-5. د پل راکښنې (Pull Request) پرانیزئ
+1.  فورک (Fork) کړئ
+2.  د ځانګړتیاوو لپاره نوی برانچ (branch) جوړ کړئ (`git checkout -b feature/amazing-feature`)
+3.  بدلونونه کامېټ کړئ (`git commit -m 'Add some amazing feature'`)
+4.  برانچ ته پش کړئ (`git push origin feature/amazing-feature`)
+5.  د پل راکښنې (Pull Request) پرانیزئ
 
-**ستونزې (Issues)**: مهرباني وکړئ که تاسو کومه ستونزه ومومئ، د GitHub Issues له لارې راپور یې کړئ.
+**ستونزې (Issues):** مهرباني وکړئ که تاسو کومه ستونزه ومومئ، د [GitHub Issues](https://github.com/spinzar/pashto-keyboard-public/issues) له لارې راپور یې کړئ.
 
 ---
 
@@ -191,9 +209,9 @@ npm run dist:appimage
 
 ## 📞 اړیکه | Contact
 
-- **پرمخوړونکی (Developer)**: iPashto AI / spinzar
-- **د پروژې لینک (Project Link)**: [https://github.com/spinzar/pashto-keyboard-public](https://github.com/spinzar/pashto-keyboard-public)
-- **ستونزې (Issues)**: [https://github.com/spinzar/pashto-keyboard-public/issues](https://github.com/spinzar/pashto-keyboard-public/issues)
+- **پرمخوړونکی (Developer):** iPashto AI / spinzar
+- **د پروژې لینک (Project Link):** [https://github.com/spinzar/pashto-keyboard-public](https://github.com/spinzar/pashto-keyboard-public)
+- **ستونزې (Issues):** [https://github.com/spinzar/pashto-keyboard-public/issues](https://github.com/spinzar/pashto-keyboard-public/issues)
 
 ---
 

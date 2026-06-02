@@ -1,13 +1,14 @@
 {
   "name": "pashto-keyboard",
   "version": "1.0.0",
-  "description": "Offline Pashto Keyboard for Linux",
+  "description": "True Offline Portable Pashto Keyboard",
   "main": "src/main.js",
   "author": "iPashto AI <ipashto-ai@example.com>",
-  "homepage": "https://github.com/ipashto-ai/pashto-keyboard#readme",
+  "homepage": "https://github.com/spinzar/pashto-keyboard-public#readme",
   "license": "Apache-2.0",
   "scripts": {
     "start": "electron .",
+    "dist": "electron-builder",
     "dist:deb": "electron-builder --linux deb",
     "dist:appimage": "electron-builder --linux AppImage"
   },
@@ -16,7 +17,7 @@
     "electron-builder": "^24.13.3"
   },
   "build": {
-    "appId": "com.ipashto.pashtokeyboard",
+    "appId": "com.spinzar.pashtokeyboard",
     "productName": "PashtoKeyboard",
     "directories": {
       "buildResources": "assets"

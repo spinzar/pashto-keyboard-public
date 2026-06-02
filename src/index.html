@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ps" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>پښتو کیبورډ</title>
+    <style>
+        body { display: flex; flex-direction: column; align-items: center; padding: 10px; font-family: sans-serif; background: #f0f2f5; }
+        textarea { width: 100%; max-width: 800px; height: 120px; padding: 10px; font-size: 1.3rem; border-radius: 8px; }
+        .keyboard { max-width: 800px; margin-top: 10px; }
+        .row { display: flex; justify-content: center; gap: 5px; margin: 3px; flex-wrap: wrap; }
+        .key { padding: 10px; min-width: 40px; background: white; border: 1px solid #ccc; border-radius: 6px; cursor: pointer; }
+        .key-space { min-width: 150px; background: #fef9c3; }
+        .btn-tool { padding: 6px 10px; margin: 2px; cursor: pointer; border-radius: 4px; border: none; }
+    </style>
+</head>
+<body>
+    <h3>⌨️ پښتو آفلاین کیبورډ</h3>
+    <div>
+        <button class="btn-tool" onclick="setMode('normal')">عادي</button>
+        <button class="btn-tool" onclick="setMode('shift')">شفټ</button>
+        <button class="btn-tool" onclick="setMode('ctrlAlt')">کنټرول الټ</button>
+        <button class="btn-tool" onclick="clearText()">پاکول</button>
+        <button class="btn-tool" onclick="copyText()">کاپي</button>
+        <button class="btn-tool" onclick="pasteText()">پیسټ</button>
+    </div>
+    <textarea id="txt" placeholder="دلته ولیکئ..."></textarea>
+    <div id="kbd" class="keyboard"></div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+        const txt = document.getElementById('txt');
+        
+        const sets = {
+            normal: [["=","-","۰","۹","۸","۷","۶","۵","۴","۳","۲","۱"],["\\","چ","ج","ح","خ","ه","ع","غ","ف","ق","ث","ص","ض"],["ګ","ک","م","ن","ت","ا","ل","ب","ی","س","ش"],["/","ږ","و","ړ","د","ذ","ر","ز","ې","ۍ"]],
+            shift: [["ـ","(",")","«","»","×","٪","؋","٫","٬","!"],["څ","ځ","ّ","َ","ِ","ُ","ً","ٍ","ٌ","ْ"],["؛",":","ة","ڼ","ټ","آ","أ","پ","ي","ئ","ښ"],["؟",".",",","ؤ","ډ","ء","ژ","ط","ظ"]],
+            ctrlAlt: [["_","•","&","^","%","$","#","@","`","~"],["|","{","}","\"","'","ٰ","ٙ","ٖ","﴿","﴾","€","ٓ","°"],["ۉ","ۇ",",","ڑ","ڈ","إ","ٔ","ٕ",";","?"]]
+        };
+        
+        function insertAtCursor(text) {
+            const start = txt.selectionStart, end = txt.selectionEnd;
+            txt.value = txt.value.substring(0, start) + text + txt.value.substring(end);
+            txt.selectionStart = txt.selectionEnd = start + text.length;
+            txt.focus();
+        }
+        
+        function render(mode) {
+            const kbd = document.getElementById('kbd');
+            kbd.innerHTML = '';
+            sets[mode].forEach(row => {
+                const rowDiv = document.createElement('div'); rowDiv.className = 'row';
+                row.forEach(ch => {
+                    const btn = document.createElement('button'); btn.className = 'key'; btn.textContent = ch;
+                    btn.onclick = () => insertAtCursor(ch);
+                    rowDiv.appendChild(btn);
+                });
+                kbd.appendChild(rowDiv);
+            });
+            const rowDiv = document.createElement('div'); rowDiv.className = 'row';
+            const del = (t,c,f) => { let b=document.createElement('button'); b.className='key '+c; b.textContent=t; b.onclick=f; rowDiv.appendChild(b); };
+            del('⌫ حذف','',()=>{ if(txt.selectionStart>0){ let p=txt.selectionStart; txt.value=txt.value.slice(0,p-1)+txt.value.slice(p); txt.selectionStart=p-1; } });
+            del('فاصله','key-space',()=>insertAtCursor(' '));
+            del('Enter','',()=>insertAtCursor('\n'));
+            kbd.appendChild(rowDiv);
+        }
+        
+        function setMode(m){ render(m); txt.focus(); }
+        function clearText(){ txt.value=''; txt.focus(); }
+        function copyText(){ ipcRenderer.send('copy-text', txt.value); alert('کاپي شو!'); }
+        async function pasteText(){ const t = await ipcRenderer.invoke('paste-text'); insertAtCursor(t); }
+        
+        render('normal');
+    </script>
+</body>
+</html>

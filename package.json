@@ -18,10 +18,14 @@
   "build": {
     "appId": "com.ipashto.pashtokeyboard",
     "productName": "PashtoKeyboard",
+    "directories": {
+      "buildResources": "assets"
+    },
     "linux": {
       "target": ["deb", "AppImage"],
       "category": "Utility",
-      "maintainer": "iPashto AI <ipashto-ai@example.com>"
+      "maintainer": "iPashto AI <ipashto-ai@example.com>",
+      "icon": "assets/icons"
     },
     "deb": {
       "maintainer": "iPashto AI <ipashto-ai@example.com>",

@@ -1,11 +1,6 @@
+---
 
-```markdown
 # 🖥️ پښتو آفلاین کیبورډ | Pashto Offline Keyboard
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Linux](https://img.shields.io/badge/platform-Linux-FCC624?logo=linux)](https://www.linux.org)
-[![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04+-E95420?logo=ubuntu)](https://ubuntu.com)
-[![Electron](https://img.shields.io/badge/Electron-30.0.0-47848F?logo=electron)](https://www.electronjs.org)
 
 د پښتو ژبې لپاره یو بشپړ **آفلاین** کیبورډ چې د انټرنیټ اړتیا پرته کار کوي. په Electron باندې جوړ شوی او د Linux (Ubuntu/Debian) لپاره چمتو دی.
 
@@ -15,22 +10,19 @@ A complete **offline** Pashto keyboard that works without internet. Built with E
 
 ## ✨ ځانګړتیاوې | Features
 
-- 🎯 **۱۰۰٪ آفلاین** – د انټرنیټ اړتیا نشته | 100% Offline
-- ⌨️ **درې کیبورډ حالتونه** – عادي, شفټ, کنټرول الټ | 3 Keyboard Modes
-- 📋 **کاپي او پیسټ** – د سیسټم کلپ بورډ ملاتړ | Copy/Paste Support
-- 🕒 **د متن تاریخچه** – وروستي ۳ متنونه خوندي کوي (په localStorage کې) | Text History (last 3)
-- 🎯 **د کرسر موقعیت ساتل** – هرځای ته کیلي دننه کول | Cursor Position Preservation
-- 💾 **د کړکۍ موقعیت خوندي کول** – د اپلیکیشن اندازه او ځای یادوي | Remembers Window Position & Size
-- 🎨 **ښکلی او کارن-دوستانه انٹرفیس** – RTL ملاتړ | Clean RTL UI
-- 🔧 **د اوبنټو ۲۴.۰۴ او ورته توزیعونو سره مطابقت** | Ubuntu 24.04+ Compatible
-- ⚡ **د شارټ کټ ملاتړ** – `Alt + Shift + P` سره ښکاره/پټول | Shortcut Support
+* 🎯 **۱۰۰٪ آفلاین** – د انټرنیټ اړتیا نشته | 100% Offline
+* ⌨️ **درې کیبورډ حالتونه** – عادي، شفټ، کنټرول الټ | 3 Keyboard Modes
+* 📋 **کاپي او پیسټ** – د سیسټم کلپ بورډ ملاتړ | Copy/Paste Support
+* 🕒 **د متن تاریخچه** – وروستي ۳ متنونه خوندي کوي (په localStorage کې) | Text History (last 3)
+* 🎯 **د کرسر موقعیت ساتل** – هرځای ته کیلي دننه کول | Cursor Position Preservation
+* 💾 **د کړکۍ موقعیت خوندي کول** – د اپلیکیشن اندازه او ځای یادوي | Remembers Window Position & Size
+* 🎨 **ښکلی او کارن-دوستانه انٹرفیس** – RTL ملاتړ | Clean RTL UI
+* 🔧 **د اوبنټو ۲۴.۰۴ او ورته توزیعونو سره مطابقت** | Ubuntu 24.04+ Compatible
+* ⚡ **د شارټ کټ ملاتړ** – `Alt + Shift + P` سره ښکاره/پټول | Shortcut Support
 
 ---
 
 ## 📸 انځور | Screenshot
-
-<!-- د عکس مات شوی لینک دلته سم شو او د ګیټ هب ریلیټیو فارمیټ ته واړول شو -->
-![پښتو کیبورډ سکرین شاټ](assets/icons/Screenshot%20from%202026-06-02%2023-51-46.png)
 
 ---
 
@@ -39,22 +31,23 @@ A complete **offline** Pashto keyboard that works without internet. Built with E
 ### لار ۱: د `.deb` پیکج څخه (توصیه شوی)
 
 1. د وروستي ریلیز څخه `.deb` فایل ډاونلوډ کړئ:
+
 ```bash
-   wget [https://github.com/spinzar/pashto-keyboard-public/releases/download/v1.0.0/pashto-keyboard_1.0.0_amd64.deb](https://github.com/spinzar/pashto-keyboard-public/releases/download/v1.0.0/pashto-keyboard_1.0.0_amd64.deb)
+wget https://github.com/spinzar/pashto-keyboard-public/releases/download/v1.0.0/pashto-keyboard_1.0.0_amd64.deb
 
 ```
 
 2. پیکج نصب کړئ:
 
 ```bash
-   sudo dpkg -i pashto-keyboard_1.0.0_amd64.deb
+sudo dpkg -i pashto-keyboard_1.0.0_amd64.deb
 
 ```
 
 3. که کومه تړلې ستونزه وي، حل یې کړئ:
 
 ```bash
-   sudo apt-get install -f
+sudo apt-get install -f
 
 ```
 
@@ -63,21 +56,21 @@ A complete **offline** Pashto keyboard that works without internet. Built with E
 1. د AppImage فایل ډاونلوډ کړئ:
 
 ```bash
-   wget [https://github.com/spinzar/pashto-keyboard-public/releases/download/v1.0.0/PashtoKeyboard-1.0.0.AppImage](https://github.com/spinzar/pashto-keyboard-public/releases/download/v1.0.0/PashtoKeyboard-1.0.0.AppImage)
+wget https://github.com/spinzar/pashto-keyboard-public/releases/download/v1.0.0/PashtoKeyboard-1.0.0.AppImage
 
 ```
 
 2. د اجرا کولو اجازه ورکړئ:
 
 ```bash
-   chmod +x PashtoKeyboard-1.0.0.AppImage
+chmod +x PashtoKeyboard-1.0.0.AppImage
 
 ```
 
 3. چلول:
 
 ```bash
-   ./PashtoKeyboard-1.0.0.AppImage --no-sandbox
+./PashtoKeyboard-1.0.0.AppImage --no-sandbox
 
 ```
 
@@ -86,7 +79,7 @@ A complete **offline** Pashto keyboard that works without internet. Built with E
 که تاسو غواړئ پخپله جوړه کړئ:
 
 ```bash
-git clone [https://github.com/spinzar/pashto-keyboard-public.git](https://github.com/spinzar/pashto-keyboard-public.git)
+git clone https://github.com/spinzar/pashto-keyboard-public.git
 cd pashto-keyboard-public
 npm install
 npm run dist:deb      # د .deb پیکج لپاره
@@ -104,14 +97,14 @@ npm run dist:appimage # د AppImage پیکج لپاره
 1. د سکریپټ د اجرا کولو اجازه ورکړئ:
 
 ```bash
-   chmod +x rebuild.sh
+chmod +x rebuild.sh
 
 ```
 
 2. سکریپټ چل کړئ:
 
 ```bash
-   ./rebuild.sh
+./rebuild.sh
 
 ```
 
@@ -205,7 +198,7 @@ npm run dist
 4. برانچ ته پش کړئ (`git push origin feature/amazing-feature`)
 5. د پل راکښنې (Pull Request) پرانیزئ
 
-**ستونزې (Issues):** مهرباني وکړئ که تاسو کومه ستونزه ومومئ، د [GitHub Issues](https://github.com/spinzar/pashto-keyboard-public/issues) له لارې راپور یې کړئ.
+**ستونزې (Issues):** مهرباني وکړئ که تاسو کومه ستونزه ومومئ، د [GitHub Issues](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fspinzar%2Fpashto-keyboard-public%2Fissues) له لارې راپور یې کړئ.
 
 ---
 
@@ -233,8 +226,8 @@ npm run dist
 ## 📞 اړیکه | Contact
 
 * **پرمخوړونکی (Developer):** iPashto AI / spinzar
-* **د پروژې لینک (Project Link):** [https://github.com/spinzar/pashto-keyboard-public](https://github.com/spinzar/pashto-keyboard-public)
-* **ستونزې (Issues):** [https://github.com/spinzar/pashto-keyboard-public/issues](https://github.com/spinzar/pashto-keyboard-public/issues)
+* **د پروژې لینک (Project Link):** [https://github.com/spinzar/pashto-keyboard-public](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fspinzar%2Fpashto-keyboard-public)
+* **ستونزې (Issues):** [https://github.com/spinzar/pashto-keyboard-public/issues](https://www.google.com/search?q=https%3A%2F%2Fgithub.com%2Fspinzar%2Fpashto-keyboard-public%2Fissues)
 
 ---
 
@@ -243,5 +236,3 @@ npm run dist
 که دا پروژه تاسو سره مرسته وکړه، مهرباني وکړئ د **⭐ ستوري (Star)** په ورکولو سره یې ملاتړ وکړئ.
 
 **پښتو ژبه وساتئ | Keep Pashto Language Alive** 🎯
-
-```

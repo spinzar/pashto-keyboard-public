@@ -13,16 +13,34 @@ function createWindow() {
     }
   });
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
-  mainWindow.on('close', (e) => { e.preventDefault(); mainWindow.hide(); });
+  mainWindow.on('close', (e) => { 
+    e.preventDefault(); 
+    mainWindow.hide(); 
+  });
 }
 
 app.whenReady().then(() => {
   createWindow();
   globalShortcut.register('Alt+Shift+P', () => {
-    if (mainWindow.isVisible()) mainWindow.hide();
-    else { mainWindow.show(); mainWindow.focus(); }
+    if (mainWindow.isVisible()) {
+      mainWindow.hide();
+    } else {
+      mainWindow.show();
+      mainWindow.focus();
+    }
   });
 });
 
-ipcMain.on('copy-text', (event, text) => clipboard.writeText(text));
-ipcMain.handle('paste-text', async () => clipboard.readText());
+ipcMain.on('copy-text', (event, text) => {
+  clipboard.writeText(text);
+});
+
+ipcMain.handle('paste-text', async () => {
+  return clipboard.readText();
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});

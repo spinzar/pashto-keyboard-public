@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Offline Pashto Keyboard for Linux",
   "main": "src/main.js",
-  "author": "iPashto AI",
+  "author": "iPashto AI <ipashto-ai@example.com>",
+  "homepage": "https://github.com/ipashto-ai/pashto-keyboard#readme",
   "license": "Apache-2.0",
   "scripts": {
     "start": "electron .",
@@ -19,7 +20,12 @@
     "productName": "PashtoKeyboard",
     "linux": {
       "target": ["deb", "AppImage"],
-      "category": "Utility"
+      "category": "Utility",
+      "maintainer": "iPashto AI <ipashto-ai@example.com>"
+    },
+    "deb": {
+      "maintainer": "iPashto AI <ipashto-ai@example.com>",
+      "compression": "xz"
     }
   }
 }
